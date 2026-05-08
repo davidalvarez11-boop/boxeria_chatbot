@@ -1,0 +1,142 @@
+/* Responsive — mobile-first extensions */
+
+/* Small phones tweak */
+@media (min-width: 480px) {
+  .hero-stats {
+    gap: 2rem;
+  }
+
+  .timeline-item {
+    flex-basis: min(240px, 70vw);
+  }
+}
+
+/* Tablet */
+@media (min-width: 768px) {
+  .hero-inner {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .courses-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .instructors-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .chatbot-layout {
+    grid-template-columns: 1fr min(280px, 32%);
+  }
+
+  .contact-grid {
+    grid-template-columns: 1fr 1.1fr;
+    align-items: stretch;
+  }
+
+  .footer-inner {
+    grid-template-columns: 1fr auto;
+    text-align: left;
+    align-items: center;
+  }
+
+  .footer-links {
+    justify-content: flex-end;
+  }
+
+  .footer-copy {
+    grid-column: 1 / -1;
+    text-align: center;
+  }
+}
+
+/* Desktop */
+@media (min-width: 1024px) {
+  .section-title {
+    letter-spacing: 0.04em;
+  }
+
+  .courses-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .timeline-horizontal {
+    gap: 1.25rem;
+  }
+
+  .timeline-item {
+    flex-basis: min(220px, 18%);
+  }
+}
+
+/* Large desktop */
+@media (min-width: 1440px) {
+  :root {
+    --container: min(1200px, 100% - 3rem);
+  }
+
+  .courses-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .instructors-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* Mobile navigation */
+@media (max-width: 767px) {
+  .nav-toggle {
+    display: flex;
+  }
+
+  .site-nav {
+    position: fixed;
+    top: var(--header-h);
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(10, 10, 15, 0.98);
+    backdrop-filter: blur(16px);
+    padding: 1.5rem;
+    transform: translateX(100%);
+    visibility: hidden;
+    transition: transform 0.3s ease, visibility 0.3s;
+    z-index: 99;
+    overflow-y: auto;
+  }
+
+  .site-nav.is-open {
+    transform: translateX(0);
+    visibility: visible;
+  }
+
+  .nav-list {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+  }
+
+  .nav-list li {
+    border-bottom: 1px solid rgba(0, 255, 136, 0.08);
+  }
+
+  .nav-list a {
+    display: block;
+    padding: 1rem 0;
+    font-size: 1.05rem;
+  }
+
+  .nav-cta {
+    margin-top: 0.5rem;
+    text-align: center;
+    border-radius: var(--radius-sm);
+  }
+}
+
+/* Fluid type */
+@media (min-width: 768px) {
+  body {
+    font-size: clamp(1rem, 0.35vw + 0.9rem, 1.0625rem);
+  }
+}
